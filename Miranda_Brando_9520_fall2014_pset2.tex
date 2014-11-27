@@ -171,6 +171,44 @@ However, as N increases, $\epsilon(n, \eta, N)$ increases linearly. Meaning that
 
 Now lets explore the sum of them $I_S[f_S] + \epsilon(n, \eta, N)$. As N increases $I_S[f_S]$ can only decrease and $\epsilon(n, \eta, N)$ increases linearly for sure. However, $I_S[f_S]$ doesn't necessarily have to decrease for every unit of N that we increase, while $\epsilon(n, \eta, N)$ for sure increases linearly for every unit of N. This makes overfitting more likely. As N increases $I_S[f_S]$ \textbf{might} decrease, however, we know for sure that $\epsilon(n, \eta, N)$ increases. This gives us an upper bound on $I[f_S]$ (generalization error) that increases most of the times as $N$ increases. This means that our upper bound estimate for the generalization error becomes more and more useless and that the empirical error becomes less good as a proxy for $I[f_S]$. Thus, yielding overfitting more and more likely.
 
+4c)
+
+\begin{proof}
+
+If we want with $1 - \eta$ confidence that the generalization and empirical error are close, then from ideas explained in part b the following equation holds:
+
+$$ | I[f_s] - I_s[f_s] | \leq \epsilon(n, \eta, N)$$
+
+and
+
+$$ | I[f^*] - I_s[f^*] | \leq \epsilon(n, \eta, N)$$
+
+Therefore we know that:
+
+$$ I[f_s] - I_s[f_s] \leq \epsilon(n, \eta, N)$$
+
+and
+
+$$ I_S[f^*] - I[f^*] \leq \epsilon(n, \eta, N)$$
+
+Add the above two inequalities:
+
+$$I[f_s] - I_s[f_s] +  I_s[f^*] - I[f^*] = (I[f_s] - I[f^*]) + (I_S[f^*] - I_s[f_s])  \leq 2\epsilon(n, \eta, N)$$
+
+The second expression in brackets is greater than or equal to zero i.e. $I_s[f^*] - I_s[f_s] \geq 0$. This is because $f_s$ is chosen such that it minimizes the empirical risk. Therefore, there cannot be any function that achieves a lower empirical risk that the minimizer of the empirical risk. Therefore:
+
+ $$I_S[f^*] \geq I_s[f_s] \implies I_S[f^*] - I_s[f_s] \geq 0$$
+ 
+ Therefore we know that $I[f_s] - I_s[f_s] \leq (I[f_s] - I[f^*]) + (I_s[f^*] - I_s[f_s]) $. Therefore implying that 
+ 
+ $$I[f_s] - I[f^*] \leq (I[f_s] - I[f^*]) + (I_S[f^*] - I_s[f_s])  \leq 2\epsilon(n, \eta, N)$$
+ 
+  $$I[f_s] - I[f^*] \leq 2\epsilon(n, \eta, N)$$
+ 
+ As required.
+
+\end{proof}
+
 %%%
 \paragraph{Problem 5 (MATLAB)}
 Please write your analysis on Problem 5 here
