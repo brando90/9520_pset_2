@@ -70,9 +70,54 @@ $$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 
 
 Therefore using this upper bound we can further upper bound our equation above by:
 
-$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[X_i] }{ \epsilon^2 }$$
+$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
+
+Now if we can upper bound the variance, we are done.
+
+$$ Var[I_s[f_i]] = Var[\frac{1}{n} \sum^n_j V(f_i,z_j)]$$
+
+Since the function $f_i$ is fixed (i.e. it was NOT chosen based on the training data) and the only randomness involved is with selecting samples/data from z, then z is the only random variable. However, since its part of the training data and it was sampled in an iid way, then z's are independent. Which makes the cost functions $V(f_i,z_j)$ independent. Therefore, we can use the "linearity" of variance when the random variables are independent to yield the following statement:
+
+$$ Var[\frac{1}{n} \sum^n_j V(f_i,z_j)] = \frac{1}{n^2} \sum^n_j Var[V(f_i,z_j)] = \frac{1}{n}Var[V(f_i,z_j)]  $$
+
+Now lets use the definition variance to upper bound the above:
+
+$$Var[V(f_i,z_j)] = \mathbb{E}[V(f_i,z_j)^2] - \mathbb{E}[V(f_i,z_j)]^2$$
+
+To upper bound the above we need to upper bound $\mathbb{E}[V(f_i,z_j)^2]$ and lower bound $\mathbb{E}[V(f_i,z_j)]^2$. 
+
+It is easy to lower bound $\mathbb{E}[V(f_i,z_j)]^2$ because according to the question, it is the squared loss function, which can never be less than zero. Therefore, the lower bound is:
+
+$$\mathbb{E}[V(f_i,z_j)]^2 \geq 0$$
+
+To upper bound  $\mathbb{E}[V(f_i,z_j)]^2$ we need to substitute in the definition of the squared loss function:
+
+$$\mathbb{E}[V(f_i,z_j)^2] = \mathbb{E}[f_i(x)^2 - 2f_i(x)y + y^2] $$
+
+Since $sup_x \in X |f(x)| \leq C$ and the max value of any y is $M$, then we have:
 
 
+$$\mathbb{E}[V(f_i,z_j)^2] \leq \mathbb{E}[(C^2 - 2CM + M^2)^2] = (C^2 - 2CM + M^2)^2 $$
+
+Setting the terms we desired to be their maximum value and minimum value respectively, we get:
+
+$$Var[V(f_i,z_j)] = \mathbb{E}[V(f_i,z_j)^2] - \mathbb{E}[V(f_i,z_j)]^2 \leq (C^2 - 2CM + M^2)^2 - 0 = (C^2 - 2CM + M^2)^2 $$
+
+$$Var[V(f_i,z_j)] \leq (C^2 - 2CM + M^2)^2$$
+
+Yielding: 
+
+$$Var[I_s[f_i]] \leq \frac{1}{n} (C^2 - 2CM + M^2)^2$$
+
+However, our goal is to bound the following:
+
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
+
+Now that we have an upper bound on the variance of the empirical risk, lets upper bound the desired probability:
+
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{1}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 } = \frac{N}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 }$$
+
+Yielding the desired upper bound.
 \end{proof}
 
 
