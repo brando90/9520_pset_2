@@ -1,0 +1,63 @@
+\documentclass[12pt]{report}
+\usepackage{scribe,graphicx,graphics}
+
+
+\course{MIT 9.520} 	
+\coursetitle{Statistical Learning Theory}	
+\semester{Fall 2014}
+\lecturenumber{2}	
+\lecturedate{}		
+
+
+% Insert your name here!
+\scribe{Brando Miranda}
+
+\begin{document}
+
+
+\maketitle
+
+\paragraph{Problem 1}
+Please write your analysis on Problem 1 here
+
+
+\paragraph{Problem 2}
+Please write your analysis on Problem 2 here
+
+
+
+\paragraph{Problem 3}
+Please write your analysis on Problem 3 here
+
+
+\paragraph{Problem 4}
+Please write your analysis on Problem 4 here
+a)
+
+
+Lemma 1: Let $X_i = I_S[f_i]$, then $\mathbb{E}[X_i] = I[f]$ and by chebyshev's bound therefore:
+
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+
+\begin{proof}
+Let $X_i = I_S[f_i] = \frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)$, where $z_j$ is the random samples/data and $f_i$ is a non random (and fixed) function in $\mathcal{H}$. Then, if we take the expectation of $X_i$ wrt to the distribution of $z$ we get:
+$$\mathbb{E}[X_i]  = \mathbb{E}[\frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)] = \frac{1}{n} \sum^{n}_{j=1} \mathbb{E}[V(f_i, z_j)] =  \mathbb{E}[V(f_i, z_j)] = I[f_i]$$
+
+Thus, we can use chebyshev's and thus the following statement is true (concluding proof of lemma):
+
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+
+Theorem: Given the conditions in the question, the the upper bound we are looking for is as follows:
+
+$$Pr[\]$$
+
+\end{proof}
+
+
+
+
+\paragraph{Problem 5 (MATLAB)}
+Please write your analysis on Problem 5 here
+
+\end{document}
+
