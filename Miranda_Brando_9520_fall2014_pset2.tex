@@ -31,6 +31,7 @@ Please write your analysis on Problem 3 here
 
 
 \paragraph{Problem 4}
+%%%
 Please write your analysis on Problem 4 here
 a)
 
@@ -47,15 +48,35 @@ Thus, we can use chebyshev's and thus the following statement is true (concludin
 
 $$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
 
+\end{proof}
+
 Theorem: Given the conditions in the question, the the upper bound we are looking for is as follows:
 
-$$Pr[\]$$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
+\begin{proof}
+
+If the largest difference between the empirical risk and the expected risk is larger than $\epsilon$, then that means that the defect (i.e. difference of empirical risk and generalization error) of one of the functions in this finite set is larger than $\epsilon.$ 
+i.e. At least one of the defects is larger than $\epsilon$. In equations it reads as follows:
+
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] = Pr[\cup^{N}_{i=1} | I_s[f_i] - I[f_i] | \geq \epsilon|] $$
+
+by the union bound:
+
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|]  \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] $$
+
+By Lemma 1 we know:
+
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+
+Therefore using this upper bound we can further upper bound our equation above by:
+
+$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[X_i] }{ \epsilon^2 }$$
+
 
 \end{proof}
 
 
-
-
+%%%
 \paragraph{Problem 5 (MATLAB)}
 Please write your analysis on Problem 5 here
 
