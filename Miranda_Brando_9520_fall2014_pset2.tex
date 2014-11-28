@@ -18,11 +18,66 @@
 \maketitle
 
 \paragraph{Problem 1}
-Please write your analysis on Problem 1 here
-
 
 \paragraph{Problem 2}
-Please write your analysis on Problem 2 here
+a)
+
+Let $\mathbf{L} = \mathbf{D} - \mathbf{W}$ as defined in the question. 
+To establish equality I will compare the expressions for $R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2$ with $R(\mathbf{f}) = \mathbf{f}^T\mathbf{L}\mathbf{f} = \mathbf{f}^T\mathbf{D}\mathbf{f} - \mathbf{f}^T\mathbf{W}\mathbf{f} $ by expanding the square in the first equation and by expanding the matrix multiplications in the second one.
+
+First:
+ $$R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2 = \frac{1}{2}\sum^m_{i,j=1} (W_{ij}f_i^2 -2W_{ij}f_if_j + W_{ij}f_j^2) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j + \frac{1}{2}\sum^m_{i,j=1}W_{ij}f_j^2 $$
+ 
+ By symmetry of the weight matrix we get:
+ 
+  $$R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2 = \frac{1}{2}\sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j + \frac{1}{2}\sum^m_{i,j=1}W_{ij}f_j^2 = \sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j  $$
+  
+  After careful manipulation we can show that 
+  $\mathbf{f}^T\mathbf{D}\mathbf{f} =  \sum^m_{i,j=1} W_{ij}f_i^2 $ 
+  and 
+  $\mathbf{f}^T\mathbf{W}\mathbf{f} = \sum^m_{i,j=1}W_{ij}f_if_j $
+  
+$$
+\begin{bmatrix}
+f_1& \cdots & f_i & \cdots & f_m\\
+\end{bmatrix} 
+%%
+\begin{bmatrix}
+\sum_{j=1}^{m}W_{1j} & 0 & \cdots &  & 0 \\
+0 & \sum_{j=1}^{m}W_{2j} & 0 & \cdots  & 0 \\
+\vdots &   &  &  \ddots  & \vdots \\
+0 & \cdots &  & 0, & \sum_{j=1}^{m}W_{mj}
+\end{bmatrix} 
+%%
+\begin{bmatrix}
+f_1\\ 
+\vdots \\
+f_i \\
+\vdots \\
+f_m\\
+\end{bmatrix}
+%%
+$$
+
+
+$$
+=
+\begin{bmatrix}
+f_1& \cdots & f_i & \cdots & f_m\\
+\end{bmatrix} 
+%
+\begin{bmatrix}
+f_1 \sum_{j=1}^{m}W_{1j} \\ 
+\vdots \\
+f_i \sum_{j=1}^{m}W_{ij}\\
+\vdots \\
+f_m \sum_{j=1}^{m}W_{mj}\\
+\end{bmatrix}
+=
+\sum^m_{i,j=1} W_{ij}f_i^2
+$$
+
+%%%%%%%%%%%%%%%%
 
 
 
