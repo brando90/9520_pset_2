@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  27 NOV 2014 18:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  27 NOV 2014 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -297,7 +297,7 @@ Here is how much of TeX's memory you used:
  6339 multiletter control sequences out of 15000+600000
  11956 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,11n,34p,885b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,34p,891b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2
@@ -312,7 +312,7 @@ t/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Miranda_Brando_9520_fall2014_pset2.pdf (6 pages, 137736 bytes
+Output written on Miranda_Brando_9520_fall2014_pset2.pdf (6 pages, 137759 bytes
 ).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
