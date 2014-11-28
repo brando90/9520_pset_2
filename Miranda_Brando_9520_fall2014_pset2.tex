@@ -152,9 +152,25 @@ $$
 
 Now take the gradient wrt to $\mathbf{f}_u$ and set it equal to zero:
 
+$$
+\mathbf{L}_{lu}^T\mathbf{y}_l
++
+\mathbf{L}_{ul}\mathbf{y}_l
++
+2\mathbf{L}_{uu}\mathbf{f}_u = 0
+$$
 
 
-
+$$
+\boxed{
+\mathbf{f}^*_{u} = -\frac{1}{2} \mathbf{L}_{uu}^{-1} (\mathbf{L}_{lu}^T+\mathbf{L}_{ul})\mathbf{y}_{l}
+}
+$$
+$$
+\boxed{
+\mathbf{f}^*_{l} = \mathbf{y}_{l}
+}
+$$
 
 \paragraph{Problem 3}
 Please write your analysis on Problem 3 here
