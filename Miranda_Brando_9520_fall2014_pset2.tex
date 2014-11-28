@@ -22,7 +22,7 @@
 \paragraph{Problem 2}
 a)
 
-Let $\mathbf{L} = \mathbf{D} - \mathbf{W}$ as defined in the question. 
+\begin{proof} Let $\mathbf{L} = \mathbf{D} - \mathbf{W}$ as defined in the question. 
 To establish equality I will compare the expressions for $R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2$ with $R(\mathbf{f}) = \mathbf{f}^T\mathbf{L}\mathbf{f} = \mathbf{f}^T\mathbf{D}\mathbf{f} - \mathbf{f}^T\mathbf{W}\mathbf{f} $ by expanding the square in the first equation and by expanding the matrix multiplications in the second one.
 
 First:
@@ -30,12 +30,12 @@ First:
  
  By symmetry of the weight matrix we get:
  
-  $$R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2 = \frac{1}{2}\sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j + \frac{1}{2}\sum^m_{i,j=1}W_{ij}f_j^2 = \sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j  $$
+ $$R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2 = \frac{1}{2}\sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j + \frac{1}{2}\sum^m_{i,j=1}W_{ij}f_j^2 = \sum^m_{i,j=1} W_{ij}f_i^2 -\sum^m_{i,j=1}W_{ij}f_if_j  $$
   
-  After careful manipulation we can show that 
-  $\mathbf{f}^T\mathbf{D}\mathbf{f} =  \sum^m_{i,j=1} W_{ij}f_i^2 $ 
-  and 
-  $\mathbf{f}^T\mathbf{W}\mathbf{f} = \sum^m_{i,j=1}W_{ij}f_if_j $
+After careful manipulation we can show that 
+$\mathbf{f}^T\mathbf{D}\mathbf{f} =  \sum^m_{i,j=1} W_{ij}f_i^2 $ 
+and 
+$\mathbf{f}^T\mathbf{W}\mathbf{f} = \sum^m_{i,j=1}W_{ij}f_if_j $. This key two key equalities will be shown bellow (which will conclude the proof):
   
 $$
 \begin{bmatrix}
@@ -77,7 +77,29 @@ f_m \sum_{j=1}^{m}W_{mj}\\
 \sum^m_{i,j=1} W_{ij}f_i^2
 $$
 
-%%%%%%%%%%%%%%%%
+%%
+
+$$
+\mathbf{f}^T\mathbf{W}\mathbf{f} = 
+%%
+\begin{bmatrix}
+f_1& \cdots & f_i & \cdots & f_m\\
+\end{bmatrix} 
+%
+\begin{bmatrix}
+\sum_{j=1}^{m}W_{1j}f_j \\ 
+\vdots \\
+\sum_{j=1}^{m}W_{ij}f_j\\
+\vdots \\
+\sum_{j=1}^{m}W_{mj}f_j\\
+\end{bmatrix}
+=
+\sum^m_{i,j=1}W_{ij}f_if_j
+%%
+$$
+Which shows the two equivalence that I required to show the equality between $R(f)$ and $R(\mathbf{f})$
+\end{proof}
+
 
 
 
