@@ -59,6 +59,8 @@ f_m\\
 %%
 $$
 
+2b)
+
 
 $$
 =
@@ -99,6 +101,57 @@ f_1& \cdots & f_i & \cdots & f_m\\
 $$
 Which shows the two equivalence that I required to show the equality between $R(f)$ and $R(\mathbf{f})$
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+b)
+Let:
+$ \mathbf{f}^T_l = \begin{bmatrix}  f(x_1) & \cdots & f(x_l)  \end{bmatrix} $  ,  $ \mathbf{f}^T_u = \begin{bmatrix}  f(x_{l+1}) & \cdots & f(x_m)  \end{bmatrix}  $, and 
+%%%%
+$\mathbf{L} = \begin{bmatrix}
+\mathbf{L}_{ll}  & \mathbf{L}_{lu} \\
+\mathbf{L}_{ul} & \mathbf{L}_{uu}
+\end{bmatrix}$
+
+Now express it in those terms:
+
+\begin{equation*}
+R(\mathbf{f}) = 
+\begin{bmatrix}  \mathbf{f}^T_l  &  \mathbf{f}^T_u  \end{bmatrix} 
+%%
+\begin{bmatrix}
+\mathbf{L}_{ll}  & \mathbf{L}_{lu} \\
+\mathbf{L}_{ul} & \mathbf{L}_{uu}
+\end{bmatrix}
+%%
+\begin{bmatrix}
+\mathbf{f}_l  \\
+\mathbf{f}_u  
+\end{bmatrix} \\
+\end{equation*}
+
+
+Plugging in the constraints to the original minimization problem we get:
+
+$$ \underset{\mathbf{f} \in \mathbb{R}^m} {\min} R(\mathbf{f}) = 
+\underset{\mathbf{f} \in \mathbb{R}^m} {\min} 
+\mathbf{y}^T_l\mathbf{L}_{ll}\mathbf{y}_l
++
+\mathbf{y}^T_l\mathbf{L}_{lu}\mathbf{f}_u
++
+\mathbf{f}_u\mathbf{L}_{ul}\mathbf{y}_l
++
+\mathbf{f}_u\mathbf{L}_{uu}\mathbf{f}_u
+=
+\underset{\mathbf{f} \in \mathbb{R}^m} {\min}
+\mathbf{y}^T_l\mathbf{L}_{lu}\mathbf{f}_u
++
+\mathbf{f}_u\mathbf{L}_{ul}\mathbf{y}_l
++
+\mathbf{f}_u\mathbf{L}_{uu}\mathbf{f}_u
+$$
+
+Now take the gradient wrt to $\mathbf{f}_u$ and set it equal to zero:
+
 
 
 
