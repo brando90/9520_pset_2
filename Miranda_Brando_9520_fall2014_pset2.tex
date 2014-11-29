@@ -188,10 +188,13 @@ Now we take the gradient wrt to $\mathbf{f}$ and set it equal to zero:
 
 $$2\mathbf{L}\mathbf{f} - 2 \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f}) = 0$$
 
-$$2\mathbf{L}\mathbf{f} = 2 \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f})$$
+$$\mathbf{L}\mathbf{f} = \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f})$$
 
-$$\mathbf{f}_*^{\lambda} = \lambda \mathbf{J}^T\mathbf{y'}( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} $$
-
+$$
+\boxed{
+\mathbf{f}_*^{\lambda} = \lambda \mathbf{J}^T\mathbf{y'}( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} 
+}
+$$
 
 \paragraph{Problem 3}
 Please write your analysis on Problem 3 here
