@@ -172,6 +172,27 @@ $$
 }
 $$
 
+2c)
+
+\begin{equation}
+ \underset{\mathbf{f} \in \mathbb{R}^m} {\min}
+ \mathbf{f}^T\mathbf{L}\mathbf{f}
++ \lambda
+%
+\Vert \mathbf{y'} - \mathbf{J} \mathbf{f} \Vert^2
+%
+\end{equation}
+where $ \mathbf{J} = \begin{bmatrix} \mathbf{I}_{l \times l} & \mathbf{O}_{l \times u} \\ \mathbf{O}_{u \times l} & \mathbf{O}_{u \times u} \end{bmatrix}$ and $\mathbf{y'}$ is defined as in the question.
+
+Now we take the gradient wrt to $\mathbf{f}$ and set it equal to zero:
+
+$$2\mathbf{L}\mathbf{f} - 2 \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f}) = 0$$
+
+$$2\mathbf{L}\mathbf{f} = 2 \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f})$$
+
+$$\mathbf{f}_*^{\lambda} = \lambda \mathbf{J}^T\mathbf{y'}( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} $$
+
+
 \paragraph{Problem 3}
 Please write your analysis on Problem 3 here
 
