@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 NOV 2014 20:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 NOV 2014 21:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -303,7 +303,7 @@ Overfull \hbox (29.13742pt too wide) in paragraph at lines 35--39
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4]
-Overfull \hbox (49.4057pt too wide) detected at line 301
+Overfull \hbox (49.4057pt too wide) detected at line 305
 \OML/cmm/m/it/12 Pr\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 I[]\OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^@ \OML/cmm
 /m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ]\OMS/cmsy/m/n/1
@@ -344,7 +344,7 @@ ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Miranda_Brando_9520_fall2014_pset2.pdf (7 pages, 161431 bytes
+Output written on Miranda_Brando_9520_fall2014_pset2.pdf (7 pages, 161779 bytes
 ).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
