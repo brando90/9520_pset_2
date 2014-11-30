@@ -88,14 +88,14 @@ w_*^k = y^k max(0, 1- \frac{\lambda}{|y^k|} )
 $$
 \end{proof}
 
-b)
+b) In this part the following equation has to also be satisfied (in addition to the gradient wrt to $w$ being zero):
 $$\frac{d}{db}\frac{1}{n}\sum_{i=1}^{n}(\langle w, x_i\rangle_{\mathbb{R}^d} +b - y_i)^2 + \lambda ||w||_1 = 0$$
 
-Since $||w||_1$ doesn't depend on b we get:
+Since $||w||_1$ doesn't depend on b we get (after some simple algebra):
 
 $$b= \bar{y} -\langle w, \bar{x} \rangle$$
 
-where $\bar{x} = \frac{1}{n}\sum^{n}_{i=1}x_i$ and $\bar{y} = \frac{1}{n}\sum^{n}_{i=1}y_i$. After plugging b back to the original minimization problem and some algebra manipulation, its easy to see that we get the exact same situation as in pset1 but with norm 1. i.e. we solve the same problem as in problem 1a) as in this p-set but with centered data $y^c$ and $x^c$.
+where $\bar{x} = \frac{1}{n}\sum^{n}_{i=1}x_i$ and $\bar{y} = \frac{1}{n}\sum^{n}_{i=1}y_i$. After plugging b back to the original minimization problem and some algebra manipulation, its easy to see that we get the exact same situation as in pset1 but with norm 1 instead of norm 2. i.e. we solve the same problem as in problem 1a) as in this p-set but with centered data $y^c$ and $x^c$.
 
 $$ \sum_{i=1}^n ( \left\langle w, x_i \right\rangle - y_i + (\bar y -  \left\langle w, \bar x \right\rangle  ) ^2  + 2 \lambda ||w||_1$$
 
@@ -371,7 +371,7 @@ a)
 
 Lemma 1: Let $X_i = I_S[f_i]$, then $\mathbb{E}[X_i] = I[f]$ and by chebyshev's bound therefore:
 
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon ] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
 
 \begin{proof}
 Let $X_i = I_S[f_i] = \frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)$, where $z_j$ is the random samples/data and $f_i$ is a non random (and fixed) function in $\mathcal{H}$. Then, if we take the expectation of $X_i$ wrt to the distribution of $z$ we get:
@@ -379,31 +379,31 @@ $$\mathbb{E}[X_i]  = \mathbb{E}[\frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)] = \frac{
 
 Thus, we can use chebyshev's and thus the following statement is true (concluding proof of lemma):
 
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon ] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
 
 \end{proof}
 
 Theorem: Given the conditions in the question, the the upper bound we are looking for is as follows:
 
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
 \begin{proof}
 
 If the largest difference between the empirical risk and the expected risk is larger than $\epsilon$, then that means that the defect (i.e. difference of empirical risk and generalization error) of one of the functions in this finite set is larger than $\epsilon.$ 
 i.e. At least one of the defects is larger than $\epsilon$. In equations it reads as follows:
 
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] = Pr[\cup^{N}_{i=1} | I_s[f_i] - I[f_i] | \geq \epsilon|] $$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] = Pr[\cup^{N}_{i=1} | I_s[f_i] - I[f_i] | \geq \epsilon] $$
 
 by the union bound:
 
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|]  \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] $$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon]  \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] $$
 
 By Lemma 1 we know:
 
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
 
 Therefore using this upper bound we can further upper bound our equation above by:
 
-$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
+$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
 
 Now if we can upper bound the variance, we are done.
 
@@ -444,11 +444,11 @@ $$Var[I_s[f_i]] \leq \frac{1}{n} (C^2 - 2CM + M^2)^2$$
 
 However, our goal is to bound the following:
 
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
 
 Now that we have an upper bound on the variance of the empirical risk, lets upper bound the desired probability:
 
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \sum^{N}_{i=1} \frac{1}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 } = \frac{N}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 }$$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{1}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 } = \frac{N}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 }$$
 
 Yielding the desired upper bound.
 \end{proof}
@@ -461,20 +461,20 @@ b)
 \begin{proof}
 Let $f_s = argmin_{f \in \mathcal{H}} I_s[f]$, i.e. the minimizer of the empirical risk. Then obviously the defect wrt to this the minimizer of the empirical risk is upper bounded by the probability from the previous part of the question, i.e.
 
-$$Pr[| I_S[f_s] - I[f_s] | \geq \epsilon|]= Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon|] \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon|] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
+$$Pr[| I_S[f_s] - I[f_s] | \geq \epsilon|]= Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
 
 
 The difference between generalization and empirical error is either above epsilon or bellow it with probability 1. Therefore:
 
-$$1 - Pr[| I_S[f_s] - I[f_s] | \leq \epsilon|] = Pr[| I_S[f_s] - I[f_s] | \geq \epsilon|] $$
+$$1 - Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] = Pr[| I_S[f_s] - I[f_s] | \geq \epsilon] $$
 
 So we have after some algebra we have:
 
-$$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon |] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} $$
+$$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} $$
 
 If we want to have at least $1 - \eta$ confidence that the empirical error will be $\epsilon-$close to the generalization error the equation bellow must hold:
 
-$$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon |] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta$$
+$$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta$$
 
 Therefore, the closeness of empirical and generalization error holds (i.e. the above inequality holds) holds if the following holds:
 
