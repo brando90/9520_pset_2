@@ -282,19 +282,64 @@ $$\mathbf{L}\mathbf{f} +\lambda \mathbf{J}^T  \mathbf{J}\mathbf{f} = \lambda \ma
 
 $$(\mathbf{L}+\lambda \mathbf{J}^T  \mathbf{J} )\mathbf{f} = \lambda \mathbf{J}^T\mathbf{y'}$$
 
+$$\mathbf{f}_*^{\lambda} = ( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} (\lambda \mathbf{J}^T\mathbf{y'})$$
+
 $$
 \boxed{
-\mathbf{f}_*^{\lambda} = ( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} (\lambda \mathbf{J}^T\mathbf{y'})
+\mathbf{f}_*^{\lambda} = ( \mathbf{L}+ \lambda \mathbf{J} )^{-1} (\lambda \mathbf{y'})
 }
 $$
 
 \paragraph{Problem 3}
-Please write your analysis on Problem 3 here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+a)
+I will first show that a fixed point is a minimizer of the empirical risk.If $c^*$ is a fixed point then: $ c^* = T(c^*) $ then it satisfies:
+
+$$ T(c^*) = c^* - \frac{1}{n}(Kc^*-Y) $$ 
+$$ c^* = c^* - \frac{1}{n}(Kc^*-Y) $$
+$$ Y = Kc^* $$
+
+Let's show that the above $c^*$ minimizes the empirical risk. I will show that by plugging in $ Y = Kc^* $ in the gradient of empirical risk and show its gradient is zero.
+
+$$ J(c) = \|Y-Kc\|_2^2 $$
+$$ \bigtriangledown_c J(c) = -2K(Y-Kc)$$
+
+Substituting $c^*$ such that $Y=Kc*$ in the above gradient yields:
+
+$$ J(c) = -2K(Y-Y) =0 $$
+
+Therefore, we proved that c* that satisfies $c^* = T(c^*) $ minimizes the empirical risk $J(c)$. \\
+
+Now, Let's examine the converse by checking if the $\hat{c}$ that minimizes the empirical risk satisfies the fixed point of the contractive map $ \hat{c}= T(\hat{c}) $.
+
+$$ \bigtriangledown_c J(c) = -2K(Y-Kc) = 0 $$
+$$ -KY + K^2c = 0$$
+$$K^2c =  KY$$
+$$ \hat{c} = (K^2)^{-1}KY = K^{-1}Y$$
+
+Now, lets see if this $\hat{c}$ satisfies the fixed point of the given contractive map:
+
+$$ T(c^*) = \hat{c} - \frac{1}{n}(K\hat{c}-Y) $$ 
+$$ T(\hat{c}) = K^{-1}Y - \frac{1}{n} (K(K^{-1}Y) - Y)$$
+$$ = K^{-1}Y - \frac{1}{n}(Y-Y) $$
+$$ K^{-1}Y = \hat{c}$$
+
+Therefore, converse holds true as well, as long as $K$ K is invertible. \\
+
+b)
+
+c)
 
 
+
+
+
+d)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Problem 4}
 %%%
-Please write your analysis on Problem 4 here
 a)
 
 
