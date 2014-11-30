@@ -482,19 +482,19 @@ $$1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta$$
 
 Which after some algebra implies:
 
-$$\epsilon \geq \sqrt{\frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}}$$
+$$\epsilon \geq \sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$$
 
-Meaning that if we want $1 - \eta$ confidence, then the smallest error bound we can bound with probability, is $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}}$
+Meaning that if we want $1 - \eta$ confidence, then the smallest error bound we can bound with probability, is $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$
 
-Therefore, that means that the difference between the true generalization error and the empirical risk is at most $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}}$ with $1 -\eta$ confidence:
+Therefore, that means that the difference between the true generalization error and the empirical risk is at most $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$ with $1 -\eta$ confidence:
 
-$$| I_S[f_s] - I[f_s] | \leq \epsilon | \geq \epsilon = \epsilon(n, \eta, N) =   \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} } $$
+$$| I_S[f_s] - I[f_s] | \leq \epsilon | \geq \epsilon = \epsilon(n, \eta, N) =   \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \eta} } $$
 
 With the the absolute value function we have $I_s[f_s] - I[f_s] \leq e(n, \eta, N)$ and $I[f_s] - I_s[f_s] \leq e(n, \eta, N) $ are true. Since we are interested in bounding the generalization error we will be interested in the second inequality (the first one is true but useless because it bounds the empirical error in terms of the generalization error. We don't need to bound the empirical error because we can compute it directly!) Thus:
 
 $$I[f_s] - I_s[f_s] \leq \epsilon(n, \eta, N) $$
 
-$$I[f_s] \leq I_s[f_s] + \epsilon(n, \eta, N) =  I_s[f_s] + \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} }$$
+$$I[f_s] \leq I_s[f_s] + \epsilon(n, \eta, N) =  I_s[f_s] + \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \eta} }$$
 
 \end{proof}
 
