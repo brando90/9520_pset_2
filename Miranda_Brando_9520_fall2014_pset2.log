@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  30 NOV 2014 11:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  30 NOV 2014 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -273,7 +273,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (61.38696pt too wide) detected at line 100
+Overfull \hbox (61.38696pt too wide) detected at line 117
 \OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) = [] [] 
 \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[] \OMS/cmsy/m/n/12 ^^@ 
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )[] = [] [](\OML/cmm/m/it/12 W[]f[] \OMS/cm
@@ -283,8 +283,8 @@ L/cmm/m/it/12 W[]f[]\OT1/cmr/m/n/12 ) = [] [] \OML/cmm/m/it/12 W[]f[] \OMS/cmsy
 /12 W[]f[]
  []
 
-
-Overfull \hbox (20.76602pt too wide) detected at line 104
+[2]
+Overfull \hbox (20.76602pt too wide) detected at line 121
 \OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) = [] [] 
 \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[] \OMS/cmsy/m/n/12 ^^@ 
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )[] = [] [] \OML/cmm/m/it/12 W[]f[] \OMS/cm
@@ -294,15 +294,15 @@ it/12 W[]f[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 W[]f[] \OMS/cmsy/m/n/12 ^^@
  []
 
 
-Overfull \hbox (29.13742pt too wide) in paragraph at lines 106--110
+Overfull \hbox (29.13742pt too wide) in paragraph at lines 123--127
 []\OT1/cmr/m/n/12 After care-ful ma-nip-u-la-tion we can show that $\OT1/cmr/bx
 /n/12 f[]Df \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 W[]f[]$ \OT1/cmr/m/n/12 and
  $\OT1/cmr/bx/n/12 f[]Wf \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 W[]f[]f[]$\OT1
 /cmr/m/n/12 .
  []
 
-[2] [3] [4] [5]
-Overfull \hbox (49.4057pt too wide) detected at line 376
+[3] [4] [5] [6]
+Overfull \hbox (49.4057pt too wide) detected at line 393
 \OML/cmm/m/it/12 Pr\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 I[]\OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^@ \OML/cmm
 /m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ]\OMS/cmsy/m/n/1
@@ -318,32 +318,32 @@ cmm/m/it/12 Pr\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 I[]\OT1/cmr/m
  []
  []
 
-[6] [7] [8] [9] (./Miranda_Brando_9520_fall2014_pset2.aux) ) 
+[7] [8] [9] (./Miranda_Brando_9520_fall2014_pset2.aux) ) 
 Here is how much of TeX's memory you used:
  2933 strings out of 493315
  39460 string characters out of 6137904
- 112868 words of memory out of 5000000
+ 114868 words of memory out of 5000000
  6339 multiletter control sequences out of 15000+600000
  11956 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,11n,34p,891b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Miranda_Brando_9520_fall2014_pset2.pdf (9 pages, 169873 bytes
+</usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Miranda_Brando_9520_fall2014_pset2.pdf (9 pages, 171767 bytes
 ).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)

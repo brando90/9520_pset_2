@@ -19,7 +19,7 @@
 
 \paragraph{Problem 1}
 
-Let:
+\begin{proof}Let:
 
 $$J(w) = \sum_{i=1}^n ( \left\langle w, x_i \right\rangle - y_i ) ^2 + 2\lambda  ||w||_1 = \sum_{i=1}^n ( \sum_{j=1}^d w_j x_i^j - y_i ) ^2 + 2\lambda \sum_{j=1}^d |w_j| $$
 
@@ -86,8 +86,24 @@ $$
 w_*^k = y^k max(0, 1- \frac{\lambda}{|y^k|} )
 }
 $$
+\end{proof}
 
+b)
+$$\frac{d}{db}\frac{1}{n}\sum_{i=1}^{n}(\langle w, x_i\rangle_{\mathbb{R}^d} +b - y_i)^2 + \lambda ||w||_1 = 0$$
 
+Since $||w||_1$ doesn't depend on b we get:
+
+$$b= \bar{y} -\langle w, \bar{x} \rangle$$
+
+where $\bar{x} = \frac{1}{n}\sum^{n}_{i=1}x_i$ and $\bar{y} = \frac{1}{n}\sum^{n}_{i=1}y_i$. After plugging b back to the original minimization problem and some algebra manipulation, its easy to see that we get the exact same situation as in pset1 but with norm 1. i.e. we solve the same problem as in problem 1a) as in this p-set but with centered data $y^c$ and $x^c$.
+
+$$ \sum_{i=1}^n ( \left\langle w, x_i \right\rangle - y_i + (\bar y -  \left\langle w, \bar x \right\rangle  ) ^2  + 2 \lambda ||w||_1$$
+
+$$
+\boxed{
+\sum_{i=1}^n (\left\langle w, x_i^c \right\rangle - y_i^c) ^2 +  2 \lambda ||w||_1
+}
+$$
 
 %%%%
 \paragraph{Problem 2}
