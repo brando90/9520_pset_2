@@ -19,8 +19,80 @@
 
 \paragraph{Problem 1}
 
+Let:
+
+$$J(w) = \sum_{i=1}^n ( \left\langle w, x_i \right\rangle - y_i ) ^2 + 2\lambda  ||w||_1 = \sum_{i=1}^n ( \sum_{j=1}^d w_j x_i^j - y_i ) ^2 + 2\lambda \sum_{j=1}^d |w_j| $$
+
+Lets take the partial sub gradient wrt to component $w_i$:
+
+$$\partial J(w) = 2 \sum_{i=1}^n ( \sum_{j=1}^d w_j x_i^j - y_i ) x_i^k + 2\lambda h  = 0$$
+
+where h is defined as follows:
+
+\begin{displaymath}
+   h = \left\{
+     \begin{array}{lr}
+       sign(w^k) & $if $ w^k \neq 0\\
+       \in \left[-1, 1 \right] & $if $ w^k = 0
+     \end{array}
+   \right.
+\end{displaymath} 
+
+Further algebraic manipulation yields:
+
+$$ \sum_{j=1}^d w_j\sum_{i=1}^n x_i^k x_i^j - \sum_{i=1}^n y_i  x_i^k + \lambda h  = 0$$
+
+From the problem we know: $\sum_{i=1}^n x_i^j x_i^k  = \delta_{j,k}$ and $y^j = \sum_{i=1}^d x_i^j y_i$ 
+
+Subsituting them to the above yields:
+
+$$ w^k =  y^k - \lambda h $$
+
+Now we proceed our analysis in two cases. 
+
+Case 1: $w^k = 0 \implies h \in [-1,1]$
+
+$$0 \in  y^k - \lambda \left[-1, 1 \right] $$
+
+For the interval above to include zero, the size of lambda must be larger that the size of $y^k$, i.e.:
+
+$$\|y^k| \leq \lambda\  \iff  1- \frac{\lambda}{|y^k|} \leq 0 $$
+
+Case2: $w^k \neq 0 \implies h \in [-1,1] $
+
+Thus: $w^k =  y^k - \lambda sign(w^k)$
+
+In the case that $w^k > 0$ then we have $w^k =  y^k - \lambda > 0$. Since $\lambda > 0$, then for that to hold $y^k > \lambda$. If that is true then since $\lambda$ is positive, so is $y^k$. So in this case $sign(w^k) = sign(y^k)$. Similarly if $w^k > 0 \implies w^k =  y^k + \lambda < 0$ But $\lambda > 0$, so $y^k$ must be negative and also larger in magnitude than $\lambda$ if we want $ y^k + \lambda < 0$. i.e. $y^k < 0$ and $|y^k| > \lambda$ and $sign(w^k) = sign(y^k)$.
+
+Therefore:
+
+$$w^k =  y^k - \lambda sign(w^k) = w^k =  y^k - \lambda sign(y^k) = w^k = y^k - \lambda \frac{y^k}{|y^k|} = y^k (1- \frac{\lambda}{|y^k|} )$$
+
+Both cases can be  encoded in the following function:
+
+\begin{displaymath}
+   w_*^k = \left\{
+     \begin{array}{lr}
+       0 & $if $  1- \frac{\lambda}{|y^k|} \leq 0\\
+       y^k (1- \frac{\lambda}{|y^k|}) & $otherwise$ 
+     \end{array}
+   \right.
+\end{displaymath}
+
+Which can be compactly encoded as a max:
+
+$$
+\boxed{
+w_*^k = y^k max(0, 1- \frac{\lambda}{|y^k|} )
+}
+$$
+
+
+
+%%%%
 \paragraph{Problem 2}
 a)
+
 
 \begin{proof} Let $\mathbf{L} = \mathbf{D} - \mathbf{W}$ as defined in the question. 
 To establish equality I will compare the expressions for $R(f) = \frac{1}{2}\sum^m_{i,j=1} W_{ij}(f_i - f_j)^2$ with $R(\mathbf{f}) = \mathbf{f}^T\mathbf{L}\mathbf{f} = \mathbf{f}^T\mathbf{D}\mathbf{f} - \mathbf{f}^T\mathbf{W}\mathbf{f} $ by expanding the square in the first equation and by expanding the matrix multiplications in the second one.
