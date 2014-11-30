@@ -1,5 +1,5 @@
 \documentclass[12pt]{report}
-\usepackage{scribe,graphicx,graphics}
+\usepackage{scribe,graphicx,graphics,subcaption}
 
 
 \course{MIT 9.520} 	
@@ -326,7 +326,7 @@ $$ K^{-1}Y = \hat{c}$$
 
 Therefore, converse holds true as well, as long as $K$ K is invertible. \\
 
-b)
+b) See figures/plots.
 
 c) \begin{proof}
 First, let's show that if $c_{\lambda}^* = T(c_{\lambda}^*)$  then it minimizes the Tiknhonov regularization.
@@ -360,7 +360,9 @@ $$ (K + \lambda I)^{-1} Y = \hat{c}$$
 
 Similarly, this argument holds if $(K + \lambda I)^{-1}$ exists and $\lambda \neq 0$. However, for Tikhonov regularization, $\lambda \neq 0$, thus converse is always true. Which completes our iff proof! Hence, $c_{\lambda}^*$ solves Tikhonov if and only if it also satisfies $c_{\lambda}^* = T(c_{\lambda}^*)$ with the contractive map given in the question. \\
 \end{proof}
-d)
+
+d) See figures/plots.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,6 +457,16 @@ Yielding the desired upper bound.
 %%%
 
 b)
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{plot_3b.jpg}
+\caption{\label{fig:errors} Number iterations (contractive map was ran) vs the avg. errors. Upper (green) curve is test error and the lower(blue) curve is training error.}
+\end{figure}
+
+My toy dataset was pest 1 data. Sigma was the average distance between points 0.528 as instructed on the question. Similarly, the test set sigma was for test set was 0.533.
+
+From my plot it is clear that early stopping at around 6 or 7 iterations can achieve a better generalization error, because, its where the error for the test set is the lowest and also, where the training error is not to low (but neither to high that overfitting has occurred).
 
 %%%
 
