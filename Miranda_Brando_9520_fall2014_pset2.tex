@@ -328,12 +328,38 @@ Therefore, converse holds true as well, as long as $K$ K is invertible. \\
 
 b)
 
-c)
+c) \begin{proof}
+First, let's show that if $c_{\lambda}^* = T(c_{\lambda}^*)$  then it minimizes the Tiknhonov regularization.
+If $ c^* = T(c^*) $ 
+$$ c^* = c^* - \frac{1}{n+\lambda}(Kc^*+\lambda Ic^*-Y) $$
+$$ Y - Kc^* = - \lambda Ic^* $$
 
+Now,lets show that the above $c^*$ minimizes the empirical risk:
 
+$$ J(c) = \|Y-Kc\|_2^2 + \lambda c^t K c $$
+$$ \bigtriangledown_c J(c) = -2K(Y-Kc) + 2\lambda K c $$
 
+Now lets substitute $Y-Kc^* = \lambda I c^*$ in the gradient of $J(c)$:
 
+$$\bigtriangledown_c J(c^*) = -2K(Y-Kc^*) + 2\lambda K c  = -2K(\lambda I c^*) + 2\lambda K c^* = - \lambda K c^* + \lambda K c^* = 0 $$
 
+Which concludes our proof. i.e. we proved that $\hat{c}$ minimizes the empirical risk. \\
+
+Now, Let's prove the converse. Given a minimizer $\hat{c}$ of $J(c)$ (empirical risk), then we have a fixed point of the contractive map i.e. $T(\hat{c}) = \hat{c}$.
+
+$$ \bigtriangledown_c J(c) = -2K(Y-Kc) + 2\lambda K c = 0 $$
+$$ -KY + K^2c + \lambda K c = 0$$
+$$ (K^2 + \lambda K)c = KY $$
+$$ c = (K^2 + \lambda K)^{-1}KY = (K(K + \lambda I))^{-1}KY = (K + \lambda I)^{-1}K^{-1}KY $$
+$$ c^* = (K + \lambda I)^{-1} Y $$
+
+Now, lets substitute $\hat{c}$ in contractive map,
+
+$$ T(\hat{c}) = (K + \lambda I)^{-1} Y - \frac{1}{n+\lambda}((K + \lambda I)(K + \lambda I)^{-1} Y-Y) = (K + \lambda I)^{-1} Y - \frac{1}{n+\lambda}(Y-Y) $$
+$$ (K + \lambda I)^{-1} Y = \hat{c}$$
+
+Similarly, this argument holds if $(K + \lambda I)^{-1}$ exists and $\lambda \neq 0$. However, for Tikhonov regularization, $\lambda \neq 0$, thus converse is always true. Which completes our iff proof! Hence, $c_{\lambda}^*$ solves Tikhonov if and only if it also satisfies $c_{\lambda}^* = T(c_{\lambda}^*)$ with the contractive map given in the question. \\
+\end{proof}
 d)
 
 
