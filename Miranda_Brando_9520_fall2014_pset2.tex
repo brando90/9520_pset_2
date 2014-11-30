@@ -400,6 +400,8 @@ d) See figures/plots.
     \label{fig:3d}
 \end{figure}
 
+From the plots I provided we can appreciate that with a higher regularization parameter, we would get a more "flat" region where the test error didn't really change anymore even if we ran more iterations of our update rule. For smaller values of lambda,the plot was more similar to the one I provided in part b (obviously, to be expected). I think that the regularization parameter actually acted as an "extra force" to avoid overfitting. Basically, because of the regularization parameter, we could be more carless on the early stopping because after a while, the curve simply evened out. Therefore, we could run more interations of our contractive map with a lower risk of overfitting. Basically, $\lambda$ was already fighting the force of us choosing a highly complex function and not truly learning from the data. Therefore, running extra iterations of $T(c)$ had a lower change of overfitting. Also, as we had a higher lambda, the test error tended to be smaller for the three plots I provided. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Problem 4}
 %%%
