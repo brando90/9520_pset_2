@@ -39,8 +39,8 @@ for ni = 1:length(n_vector);
     accuracy_tikhonov_for_N_mean(ni) = mean(accuracy_tikhonov_rand_samples);
     accuracy_tikhonov_for_N_std(ni) = std(accuracy_laplacian_rand_samples);
     
-    accuracy_laplacian_for_N_mean(1,ni) = mean(accuracy_laplacian_rand_samples);
-    accuracy_laplacian_for_N_std(2,ni) = std(accuracy_laplacian_rand_samples);
+    accuracy_laplacian_for_N_mean(ni) = mean(accuracy_laplacian_rand_samples);
+    accuracy_laplacian_for_N_std(ni) = std(accuracy_laplacian_rand_samples);
 end
 
 % plot comparisson
