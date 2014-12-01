@@ -65,7 +65,6 @@ Thus: $w^k =  y^k - \lambda sign(w^k)$
 In the case that $w^k > 0$ then we have $w^k =  y^k - \lambda > 0$. Since $\lambda > 0$, then for that to hold $y^k > \lambda$. If that is true then since $\lambda$ is positive, so is $y^k$. So in this case $sign(w^k) = sign(y^k)$. Similarly if $w^k > 0 \implies w^k =  y^k + \lambda < 0$ But $\lambda > 0$, so $y^k$ must be negative and also larger in magnitude than $\lambda$ if we want $ y^k + \lambda < 0$. i.e. $y^k < 0$ and $|y^k| > \lambda$ and $sign(w^k) = sign(y^k)$.
 
 Therefore:
-
 $$w^k =  y^k - \lambda sign(w^k) = w^k =  y^k - \lambda sign(y^k) = w^k = y^k - \lambda \frac{y^k}{|y^k|} = y^k (1- \frac{\lambda}{|y^k|} )$$
 
 Both cases can be  encoded in the following function:
@@ -91,9 +90,7 @@ $$
 b) In this part the following equation has to also be satisfied (in addition to the gradient wrt to $w$ being zero):
 $$\frac{d}{db}\frac{1}{n}\sum_{i=1}^{n}(\langle w, x_i\rangle_{\mathbb{R}^d} +b - y_i)^2 + \lambda ||w||_1 = 0$$
 
-Since $||w||_1$ doesn't depend on b we get (after some simple algebra):
-
-$$b= \bar{y} -\langle w, \bar{x} \rangle$$
+Since $||w||_1$ doesn't depend on b we get (after some simple algebra): $b= \bar{y} -\langle w, \bar{x} \rangle$
 
 where $\bar{x} = \frac{1}{n}\sum^{n}_{i=1}x_i$ and $\bar{y} = \frac{1}{n}\sum^{n}_{i=1}y_i$. After plugging b back to the original minimization problem and some algebra manipulation, its easy to see that we get the exact same situation as in pset1 but with norm 1 instead of norm 2. i.e. we solve the same problem as in problem 1a) as in this p-set but with centered data $y^c$ and $x^c$.
 
@@ -289,9 +286,7 @@ $$
 a)
 I will first show that a fixed point is a minimizer of the empirical risk.If $c^*$ is a fixed point then: $ c^* = T(c^*) $ then it satisfies:
 
-$$ T(c^*) = c^* - \frac{1}{n}(Kc^*-Y) $$ 
-$$ c^* = c^* - \frac{1}{n}(Kc^*-Y) $$
-$$ Y = Kc^* $$
+$$ T(c^*) = c^* - \frac{1}{n}(Kc^*-Y) \implies  c^* = c^* - \frac{1}{n}(Kc^*-Y) \implies Y = Kc^* $$
 
 Let's show that the above $c^*$ minimizes the empirical risk. I will show that by plugging in $ Y = Kc^* $ in the gradient of empirical risk and show its gradient is zero.
 
@@ -487,6 +482,12 @@ a) Code
 b)Code
 C) When we plotted the accuracy on the unlabeled data against n (the number of labeled data) we could see that as n got large, Laplacian and RLS had similar accuracy. However, for smaller values of n, Laplacian had a clear advantage because it was able to incorporate information about the geometric structure of the unlabeled data when. Therefore, when it came around to predict, it had an advantage, because it had information that regular RLS tikhonov had no way of obtaining. 
 Obviously, this method is only likely to do well if the assumption that the manifold and geometric structure of the data is some how related to the hidden labels that we are trying to learn.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{plot_for_q5_ver2.jpg}
+\caption{\label{fig:errors} Green curve is Laplacian and Red is Tikhonov.}
+\end{figure}
 
 \end{document}
 

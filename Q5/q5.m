@@ -1,6 +1,4 @@
-%%% data
 load('ps2-dataset.mat');
-% scatter(Xu(:, 1), Xu(:, 2));
 
 n_vector = [4 8 16 32 64];
 %n_vector = 4:64;
@@ -23,7 +21,6 @@ for ni = 1:length(n_vector);
     %evaluate 10 random samples from labeled for the current length n.
     n = n_vector(ni); %sample n from labeled set to train our Algs
     for s = 1:10;
-        % sample .
         nl = length(yl);
         
         n_rand_rows =  randsample(nl, n) ;    % random numbers to select rows.
@@ -43,7 +40,7 @@ for ni = 1:length(n_vector);
     accuracy_laplacian_for_N_std(ni) = std(accuracy_laplacian_rand_samples);
 end
 
-% plot comparisson
+% plot comparison
 display([accuracy_tikhonov_for_N_mean; accuracy_tikhonov_for_N_std], 'accuracy_tikhonov_for_N');
 display([accuracy_laplacian_for_N_mean; accuracy_laplacian_for_N_std], 'accuracy_laplacian_for_N');
 
@@ -51,12 +48,9 @@ figure
 errorbar(n_vector, accuracy_tikhonov_for_N_mean, accuracy_tikhonov_for_N_std, 'red');
 hold
 errorbar(n_vector, accuracy_laplacian_for_N_mean, accuracy_laplacian_for_N_std, 'green');
-%hT = errorbar(n_vector, accuracy_tikhonov_for_N_mean, accuracy_tikhonov_for_N_std, '-og', 'LineWidth', .2);
-%hL = errorbar(n_vector, accuracy_laplacian_for_N_mean, accuracy_laplacian_for_N_std, '-ob', 'LineWidth', .2);
 title('ComparisonLaplacian vs. Tikhonov');
 ylabel('Avg. accuracy on unlabeled data')
 xlabel('Number of labeled examples')
-%legend([hT, hL], 'Tikhonov Gaussian RLS', 'Laplacian', 'Location', 'Southeast');
 ylim([0 1.05]);
 
 

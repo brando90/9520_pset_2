@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 DEC 2014 01:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 DEC 2014 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -186,7 +186,11 @@ l } \fi .
 )
 \c@subfigure=\count106
 \c@subtable=\count107
-) (./Miranda_Brando_9520_fall2014_pset2.aux)
+) (./Miranda_Brando_9520_fall2014_pset2.aux
+
+LaTeX Warning: Label `fig:errors' multiply defined.
+
+)
 \openout1 = `Miranda_Brando_9520_fall2014_pset2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -307,7 +311,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (61.38696pt too wide) detected at line 117
+Overfull \hbox (61.38696pt too wide) detected at line 114
 \OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) = [] [] 
 \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[] \OMS/cmsy/m/n/12 ^^@ 
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )[] = [] [](\OML/cmm/m/it/12 W[]f[] \OMS/cm
@@ -318,7 +322,7 @@ L/cmm/m/it/12 W[]f[]\OT1/cmr/m/n/12 ) = [] [] \OML/cmm/m/it/12 W[]f[] \OMS/cmsy
  []
 
 [2]
-Overfull \hbox (20.76602pt too wide) detected at line 121
+Overfull \hbox (20.76602pt too wide) detected at line 118
 \OML/cmm/m/it/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ) = [] [] 
 \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[] \OMS/cmsy/m/n/12 ^^@ 
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )[] = [] [] \OML/cmm/m/it/12 W[]f[] \OMS/cm
@@ -328,57 +332,57 @@ it/12 W[]f[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 W[]f[] \OMS/cmsy/m/n/12 ^^@
  []
 
 
-Overfull \hbox (29.13742pt too wide) in paragraph at lines 123--127
+Overfull \hbox (29.13742pt too wide) in paragraph at lines 120--124
 []\OT1/cmr/m/n/12 After care-ful ma-nip-u-la-tion we can show that $\OT1/cmr/bx
 /n/12 f[]Df \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 W[]f[]$ \OT1/cmr/m/n/12 and
  $\OT1/cmr/bx/n/12 f[]Wf \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 W[]f[]f[]$\OT1
 /cmr/m/n/12 .
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 <3b.jpg, id=29, 562.1pt x 420.57124pt>
 File: 3b.jpg Graphic file (type jpg)
  <use 3b.jpg>
-Package pdftex.def Info: 3b.jpg used on input line 324.
+Package pdftex.def Info: 3b.jpg used on input line 319.
 (pdftex.def)             Requested size: 328.82707pt x 246.02998pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+ [5 <./3b.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 <l01.jpg, id=33, 562.1pt x 420.57124pt>
 File: l01.jpg Graphic file (type jpg)
  <use l01.jpg>
-Package pdftex.def Info: l01.jpg used on input line 368.
+Package pdftex.def Info: l01.jpg used on input line 363.
 (pdftex.def)             Requested size: 140.92793pt x 105.44417pt.
 
 <l1.jpg, id=34, 562.1pt x 420.57124pt>
 File: l1.jpg Graphic file (type jpg)
  <use l1.jpg>
-Package pdftex.def Info: l1.jpg used on input line 375.
+Package pdftex.def Info: l1.jpg used on input line 370.
 (pdftex.def)             Requested size: 140.92793pt x 105.44417pt.
 
 <l6.jpg, id=35, 562.1pt x 420.57124pt>
 File: l6.jpg Graphic file (type jpg)
  <use l6.jpg>
-Package pdftex.def Info: l6.jpg used on input line 382.
+Package pdftex.def Info: l6.jpg used on input line 377.
 (pdftex.def)             Requested size: 140.92793pt x 105.44417pt.
- [6 <./3b.jpg>] [7 <./l01.jpg> <./l1.jpg> <./l6.jpg>]
-Overfull \hbox (35.91145pt too wide) detected at line 435
+ [6 <./l01.jpg> <./l1.jpg> <./l6.jpg>] [7]
+Overfull \hbox (35.91145pt too wide) detected at line 430
 \U/msa/m/n/12 ) \OML/cmm/m/it/12 Pr\OT1/cmr/m/n/12 [[] \OMS/cmsy/m/n/12 j\OML/c
 mm/m/it/12 I[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ] \OMS/cmsy/m/
 n/12 ^^@ \OML/cmm/m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ]
@@ -387,7 +391,7 @@ n/12 ^^@ \OML/cmm/m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ]
  []
 
 
-Overfull \hbox (42.73901pt too wide) detected at line 441
+Overfull \hbox (42.73901pt too wide) detected at line 436
 \OML/cmm/m/it/12 Pr\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 I[]\OT1/
 cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^@ \OML/cmm
 /m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ]\OMS/cmsy/m/n/1
@@ -403,7 +407,7 @@ it/12 f[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 I\OT1/cmr/m/n/
  []
 
 
-Overfull \hbox (58.82979pt too wide) detected at line 445
+Overfull \hbox (58.82979pt too wide) detected at line 440
 \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Pr\OT1/cmr/m/n/12 [\OMS
 /cmsy/m/n/12 j\OML/cmm/m/it/12 I[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr
 /m/n/12 ] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it
@@ -419,38 +423,48 @@ m/it/12 I\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 ]\OMS/cmsy/m/n/12
 12 1 \OMS/cmsy/m/n/12 ^^@ []
  []
 
-[8] [9] [10] (./Miranda_Brando_9520_fall2014_pset2.aux) ) 
+[8] [9] <plot_for_q5_ver2.jpg, id=52, 562.1pt x 420.57124pt>
+File: plot_for_q5_ver2.jpg Graphic file (type jpg)
+
+<use plot_for_q5_ver2.jpg>
+Package pdftex.def Info: plot_for_q5_ver2.jpg used on input line 488.
+(pdftex.def)             Requested size: 234.8775pt x 175.73386pt.
+ [10 <./plot_for_q5_ver2.jpg>]
+(./Miranda_Brando_9520_fall2014_pset2.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4066 strings out of 493315
- 59743 string characters out of 6137904
- 135469 words of memory out of 5000000
- 7457 multiletter control sequences out of 15000+600000
+ 4071 strings out of 493315
+ 59862 string characters out of 6137904
+ 135509 words of memory out of 5000000
+ 7461 multiletter control sequences out of 15000+600000
  13812 words of font info for 51 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,11n,40p,1057b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Miranda_Brando_9520_fall2014_pset2.pdf (10 pages, 258429 byte
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Miranda_Brando_9520_fall2014_pset2.pdf (10 pages, 276703 byte
 s).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
