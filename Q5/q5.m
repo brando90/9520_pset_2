@@ -38,11 +38,9 @@ for ni = 1:length(n_vector);
     end
     accuracy_tikhonov_for_N_mean(ni) = mean(accuracy_tikhonov_rand_samples);
     accuracy_tikhonov_for_N_std(ni) = std(accuracy_laplacian_rand_samples);
-    %display(accuracy_tikhonov_rand_samples, 'accuracy_tikhonov_rand_samples');
     
     accuracy_laplacian_for_N_mean(1,ni) = mean(accuracy_laplacian_rand_samples);
     accuracy_laplacian_for_N_std(2,ni) = std(accuracy_laplacian_rand_samples);
-    %display(accuLS, 'accuLS');
 end
 
 % plot comparisson
@@ -52,10 +50,10 @@ display([accuracy_laplacian_for_N_mean; accuracy_laplacian_for_N_std], 'accuracy
 figure
 hT = errorbar(n_vector, accuracy_tikhonov_for_N_mean, accuracy_tikhonov_for_N_std, '-og', 'LineWidth', .2);
 hold
-%%hL = errorbar(n_vector, accuracy_laplacian_for_N_mean, accuracy_laplacian_for_N_std, '-ob', 'LineWidth', .2);
+hL = errorbar(n_vector, accuracy_laplacian_for_N_mean, accuracy_laplacian_for_N_std, '-ob', 'LineWidth', .2);
+ylabel('Avg. accuracy on unlabeled data')
 xlabel('Number of labeled examples')
-ylabel('Average accuracy on unlabeled data')
-title('Performance comparisson: Tikhonov vs. Laplacian');
+title('Performance comparison: Laplacian vs. Tikhonov');
 legend([hT, hL], 'Tikhonov Gaussian RLS', 'Laplacian', 'Location', 'Southeast');
 ylim([0 1.05]);
 
