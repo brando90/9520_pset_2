@@ -49,11 +49,11 @@ display([accuracy_laplacian_for_N_mean; accuracy_laplacian_for_N_std], 'accuracy
 
 figure
 hT = errorbar(n_vector, accuracy_tikhonov_for_N_mean, accuracy_tikhonov_for_N_std, '-og', 'LineWidth', .2);
-hold
 hL = errorbar(n_vector, accuracy_laplacian_for_N_mean, accuracy_laplacian_for_N_std, '-ob', 'LineWidth', .2);
+hold
+title('Performance comparison: Laplacian vs. Tikhonov');
 ylabel('Avg. accuracy on unlabeled data')
 xlabel('Number of labeled examples')
-title('Performance comparison: Laplacian vs. Tikhonov');
 legend([hT, hL], 'Tikhonov Gaussian RLS', 'Laplacian', 'Location', 'Southeast');
 ylim([0 1.05]);
 
