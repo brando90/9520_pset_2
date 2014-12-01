@@ -276,12 +276,6 @@ Now we take the gradient wrt to $\mathbf{f}$ and set it equal to zero:
 
 $$2\mathbf{L}\mathbf{f} - 2 \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f}) = 0$$
 
-$$\mathbf{L}\mathbf{f} = \lambda \mathbf{J}^T(\mathbf{y'} -\mathbf{J}\mathbf{f})$$
-
-$$\mathbf{L}\mathbf{f} +\lambda \mathbf{J}^T  \mathbf{J}\mathbf{f} = \lambda \mathbf{J}^T\mathbf{y'}$$
-
-$$(\mathbf{L}+\lambda \mathbf{J}^T  \mathbf{J} )\mathbf{f} = \lambda \mathbf{J}^T\mathbf{y'}$$
-
 $$\mathbf{f}_*^{\lambda} = ( \mathbf{L}+ \lambda \mathbf{J}^T \mathbf{J} )^{-1} (\lambda \mathbf{J}^T\mathbf{y'})$$
 
 $$
@@ -313,20 +307,17 @@ Therefore, we proved that c* that satisfies $c^* = T(c^*) $ minimizes the empiri
 Now, Let's examine the converse by checking if the $\hat{c}$ that minimizes the empirical risk satisfies the fixed point of the contractive map $ \hat{c}= T(\hat{c}) $.
 
 $$ \bigtriangledown_c J(c) = -2K(Y-Kc) = 0 $$
-$$ -KY + K^2c = 0$$
-$$K^2c =  KY$$
 $$ \hat{c} = (K^2)^{-1}KY = K^{-1}Y$$
 
 Now, lets see if this $\hat{c}$ satisfies the fixed point of the given contractive map:
 
 $$ T(c^*) = \hat{c} - \frac{1}{n}(K\hat{c}-Y) $$ 
-$$ T(\hat{c}) = K^{-1}Y - \frac{1}{n} (K(K^{-1}Y) - Y)$$
-$$ = K^{-1}Y - \frac{1}{n}(Y-Y) $$
+$$ T(\hat{c}) = K^{-1}Y - \frac{1}{n} (K(K^{-1}Y) - Y) = K^{-1}Y - \frac{1}{n}(Y-Y) $$
 $$ K^{-1}Y = \hat{c}$$
 
 Therefore, converse holds true as well, as long as $K$ K is invertible. \\
 
-b) See figures/plots.
+b)
 
 \begin{figure}
 \centering
@@ -334,13 +325,12 @@ b) See figures/plots.
 \caption{\label{fig:errors} Number iterations (contractive map was ran) vs the avg. errors. Upper (green) curve is test error and the lower(blue) curve is training error.}
 \end{figure}
 
-My toy dataset was pest 1 data. Sigma was the average distance between points 0.528 as instructed on the question. Similarly, the test set sigma was for test set was 0.533.
+ See figures/plots. My toy dataset was pest 1 data. Sigma was the average distance between points 0.528 as instructed on the question. Similarly, the test set sigma was for test set was 0.533.
 
 From my plot it is clear that early stopping at around 6 or 7 iterations can achieve a better generalization error, because, its where the error for the test set is the lowest and also, where the training error is not to low (but neither to high that overfitting has occurred).
 
 
-c) \begin{proof}
-First, let's show that if $c_{\lambda}^* = T(c_{\lambda}^*)$  then it minimizes the Tiknhonov regularization.
+c) First, let's show that if $c_{\lambda}^* = T(c_{\lambda}^*)$  then it minimizes the Tiknhonov regularization.
 If $ c^* = T(c^*) $ 
 $$ c^* = c^* - \frac{1}{n+\lambda}(Kc^*+\lambda Ic^*-Y) $$
 $$ Y - Kc^* = - \lambda Ic^* $$
@@ -359,8 +349,6 @@ Which concludes our proof. i.e. we proved that $\hat{c}$ minimizes the empirical
 Now, Let's prove the converse. Given a minimizer $\hat{c}$ of $J(c)$ (empirical risk), then we have a fixed point of the contractive map i.e. $T(\hat{c}) = \hat{c}$.
 
 $$ \bigtriangledown_c J(c) = -2K(Y-Kc) + 2\lambda K c = 0 $$
-$$ -KY + K^2c + \lambda K c = 0$$
-$$ (K^2 + \lambda K)c = KY $$
 $$ c = (K^2 + \lambda K)^{-1}KY = (K(K + \lambda I))^{-1}KY = (K + \lambda I)^{-1}K^{-1}KY $$
 $$ c^* = (K + \lambda I)^{-1} Y $$
 
@@ -370,7 +358,6 @@ $$ T(\hat{c}) = (K + \lambda I)^{-1} Y - \frac{1}{n+\lambda}((K + \lambda I)(K +
 $$ (K + \lambda I)^{-1} Y = \hat{c}$$
 
 Similarly, this argument holds if $(K + \lambda I)^{-1}$ exists and $\lambda \neq 0$. However, for Tikhonov regularization, $\lambda \neq 0$, thus converse is always true. Which completes our iff proof! Hence, $c_{\lambda}^*$ solves Tikhonov if and only if it also satisfies $c_{\lambda}^* = T(c_{\lambda}^*)$ with the contractive map given in the question. \\
-\end{proof}
 
 d) See figures/plots.
 
@@ -405,137 +392,73 @@ From the plots I provided we can appreciate that with a higher regularization pa
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Problem 4}
 %%%
-a)
-
-
-Lemma 1: Let $X_i = I_S[f_i]$, then $\mathbb{E}[X_i] = I[f]$ and by chebyshev's bound therefore:
-
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon ] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
-
-\begin{proof}
-Let $X_i = I_S[f_i] = \frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)$, where $z_j$ is the random samples/data and $f_i$ is a non random (and fixed) function in $\mathcal{H}$. Then, if we take the expectation of $X_i$ wrt to the distribution of $z$ we get:
-$$\mathbb{E}[X_i]  = \mathbb{E}[\frac{1}{n} \sum^{n}_{j=1} V(f_i, z_j)] = \frac{1}{n} \sum^{n}_{j=1} \mathbb{E}[V(f_i, z_j)] =  \mathbb{E}[V(f_i, z_j)] = I[f_i]$$
-
-Thus, we can use chebyshev's and thus the following statement is true (concluding proof of lemma):
-
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon ] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
-
-\end{proof}
-
-Theorem: Given the conditions in the question, the the upper bound we are looking for is as follows:
+a)Theorem: Given the conditions in the question, the the upper bound we are looking for is as follows:
 
 $$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
 \begin{proof}
+If the largest difference between the empirical risk and the expected risk is larger than $\epsilon$, then that means at least one the defect is larger than $\epsilon$. i.e.:
 
-If the largest difference between the empirical risk and the expected risk is larger than $\epsilon$, then that means that the defect (i.e. difference of empirical risk and generalization error) of one of the functions in this finite set is larger than $\epsilon.$ 
-i.e. At least one of the defects is larger than $\epsilon$. In equations it reads as follows:
-
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] = Pr[\cup^{N}_{i=1} | I_s[f_i] - I[f_i] | \geq \epsilon] $$
+$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq Pr[\cup^{N}_{i=1} | I_s[f_i] - I[f_i] | \geq \epsilon] $$
 
 by the union bound:
 
 $$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon]  \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] $$
 
-By Lemma 1 we know:
+By chevychev's (since we known $\mathbb{E}[I_s[f]] = I[f]$) we have:
 
-$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon] \leq \frac{ Var[X_i] }{ \epsilon^2 } $$
-
-Therefore using this upper bound we can further upper bound our equation above by:
-
-$$ \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
+$$ Pr[ | I_s[f_i] - I[f_i] | \geq \epsilon] \leq \frac{ Var[X_i] }{ \epsilon^2 } \implies \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
 
 Now if we can upper bound the variance, we are done.
 
 $$ Var[I_s[f_i]] = Var[\frac{1}{n} \sum^n_j V(f_i,z_j)]$$
 
-Since the function $f_i$ is fixed (i.e. it was NOT chosen based on the training data) and the only randomness involved is with selecting samples/data from z, then z is the only random variable. However, since its part of the training data and it was sampled in an iid way, then z's are independent. Which makes the cost functions $V(f_i,z_j)$ independent. Therefore, we can use the "linearity" of variance when the random variables are independent to yield the following statement:
+Since the function $f_i$ is fixed (i.e. NOT chosen based on the S) and the only randomness involved is with selecting samples/data from z, then the cost functions are iids thus:
 
 $$ Var[\frac{1}{n} \sum^n_j V(f_i,z_j)] = \frac{1}{n^2} \sum^n_j Var[V(f_i,z_j)] = \frac{1}{n}Var[V(f_i,z_j)]  $$
-
-Now lets use the definition variance to upper bound the above:
 
 $$Var[V(f_i,z_j)] = \mathbb{E}[V(f_i,z_j)^2] - \mathbb{E}[V(f_i,z_j)]^2$$
 
 To upper bound the above we need to upper bound $\mathbb{E}[V(f_i,z_j)^2]$ and lower bound $\mathbb{E}[V(f_i,z_j)]^2$. 
 
-It is easy to lower bound $\mathbb{E}[V(f_i,z_j)]^2$ because according to the question, it is the squared loss function, which can never be less than zero. Therefore, the lower bound is:
+It is easy to lower bound $\mathbb{E}[V(f_i,z_j)]^2$ because it is the squared loss function, which can never be less than zero. Therefore, the lower bound is $\mathbb{E}[V(f_i,z_j)]^2 \geq 0$.
 
-$$\mathbb{E}[V(f_i,z_j)]^2 \geq 0$$
-
-To upper bound  $\mathbb{E}[V(f_i,z_j)]^2$ we need to substitute in the definition of the squared loss function:
-
-$$\mathbb{E}[V(f_i,z_j)^2] = \mathbb{E}[f_i(x)^2 - 2f_i(x)y + y^2] $$
-
-Since $sup_x \in X |f(x)| \leq C$ and the max value of any y is $M$, then we have:
-
+To upper bound  $\mathbb{E}[V(f_i,z_j)]^2$ we need to substitute in the definition of the squared loss function $\mathbb{E}[V(f_i,z_j)^2] = \mathbb{E}[f_i(x)^2 - 2f_i(x)y + y^2] $. Since $sup_x \in X |f(x)| \leq C$ and the max value of any y is $M$, then we have:
 
 $$\mathbb{E}[V(f_i,z_j)^2] \leq \mathbb{E}[(C^2 - 2CM + M^2)^2] = (C^2 - 2CM + M^2)^2 $$
 
-Setting the terms we desired to be their maximum value and minimum value respectively, we get:
+Setting the terms to be their max value and min value respectively, we get:
 
-$$Var[V(f_i,z_j)] = \mathbb{E}[V(f_i,z_j)^2] - \mathbb{E}[V(f_i,z_j)]^2 \leq (C^2 - 2CM + M^2)^2 - 0 = (C^2 - 2CM + M^2)^2 $$
-
-$$Var[V(f_i,z_j)] \leq (C^2 - 2CM + M^2)^2$$
-
-Yielding: 
+$$Var[V(f_i,z_j)] = \mathbb{E}[V(f_i,z_j)^2] - \mathbb{E}[V(f_i,z_j)]^2 \leq (C^2 - 2CM + M^2)^2 - 0 = (C^2 - 2CM + M^2)^2$$
 
 $$Var[I_s[f_i]] \leq \frac{1}{n} (C^2 - 2CM + M^2)^2$$
 
-However, our goal is to bound the following:
-
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 }$$
-
-Now that we have an upper bound on the variance of the empirical risk, lets upper bound the desired probability:
-
-$$Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{1}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 } = \frac{N}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 }$$
-
-Yielding the desired upper bound.
+$$ \therefore Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} \frac{ Var[I_s[f_i]] }{ \epsilon^2 } = \sum^{N}_{i=1} \frac{1}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 } = \frac{N}{n} \frac{ (C^2 - 2CM + M^2)^2 }{ \epsilon^2 }$$
 \end{proof}
 %%%
 
-b)
-
-%%%
-
-\begin{proof}
-Let $f_s = argmin_{f \in \mathcal{H}} I_s[f]$, i.e. the minimizer of the empirical risk. Then obviously the defect wrt to this the minimizer of the empirical risk is upper bounded by the probability from the previous part of the question, i.e.
+b) Let $f_s = argmin_{f \in \mathcal{H}} I_s[f]$, i.e. the minimizer of the empirical risk. Then obviously the defect wrt to this the minimizer of the empirical risk is upper bounded by the probability from the previous part of the question, i.e.
 
 $$Pr[| I_S[f_s] - I[f_s] | \geq \epsilon|]= Pr[ \sup\limits_{f \in \mathcal{H}}  | I_s[f] - I[f] | \geq \epsilon] \leq \sum^{N}_{i=1} Pr[| I_s[f_i] - I[f_i] | \geq \epsilon] \leq \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2}$$
 
+The difference btw generalization and empirical error is either above epsilon or bellow it:
 
-The difference between generalization and empirical error is either above epsilon or bellow it with probability 1. Therefore:
-
-$$1 - Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] = Pr[| I_S[f_s] - I[f_s] | \geq \epsilon] $$
-
-So we have after some algebra we have:
-
-$$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} $$
+$$1 - Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] = Pr[| I_S[f_s] - I[f_s] | \geq \epsilon] \implies Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} $$
 
 If we want to have at least $1 - \eta$ confidence that the empirical error will be $\epsilon-$close to the generalization error the equation bellow must hold:
 
 $$Pr[| I_S[f_s] - I[f_s] | \leq \epsilon ] \geq 1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta$$
 
-Therefore, the closeness of empirical and generalization error holds (i.e. the above inequality holds) holds if the following holds:
+Therefore, the closeness holds (i.e. above inequality) holds if the following holds:
 
-$$1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta$$
-
-Which after some algebra implies:
-
-$$\epsilon \geq \sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$$
-
-Meaning that if we want $1 - \eta$ confidence, then the smallest error bound we can bound with probability, is $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$
+$$1- \frac{N(c^2-2cM+M^2)^2}{n \epsilon^2} \geq 1- \eta \implies \epsilon \geq \sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$$
 
 Therefore, that means that the difference between the true generalization error and the empirical risk is at most $\sqrt{\frac{N(c^2-2cM+M^2)^2}{n \eta}}$ with $1 -\eta$ confidence:
 
 $$| I_S[f_s] - I[f_s] | \leq \epsilon | \geq \epsilon = \epsilon(n, \eta, N) =   \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \eta} } $$
 
-With the the absolute value function we have $I_s[f_s] - I[f_s] \leq e(n, \eta, N)$ and $I[f_s] - I_s[f_s] \leq e(n, \eta, N) $ are true. Since we are interested in bounding the generalization error we will be interested in the second inequality (the first one is true but useless because it bounds the empirical error in terms of the generalization error. We don't need to bound the empirical error because we can compute it directly!) Thus:
+With the the absolute value function we have $I_s[f_s] - I[f_s] \leq e(n, \eta, N)$ and $I[f_s] - I_s[f_s] \leq e(n, \eta, N) $ are true. Since we are interested in bounding the generalization error we will be interested in the second inequality.Thus:
 
-$$I[f_s] - I_s[f_s] \leq \epsilon(n, \eta, N) $$
-
-$$I[f_s] \leq I_s[f_s] + \epsilon(n, \eta, N) =  I_s[f_s] + \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \eta} }$$
-
-\end{proof}
+$$I[f_s] - I_s[f_s] \leq \epsilon(n, \eta, N) \implies I[f_s] \leq I_s[f_s] + \epsilon(n, \eta, N) =  I_s[f_s] + \sqrt{ \frac{N(c^2-2cM+M^2)^2}{n \eta} }$$
 
 As $N = |\mathcal{H}|$ increases, then that means the we are increasing the space of functions we are allowing ourselves to choose from. Since we are adding more functions to choose from without removing previous functions we already had in $\mathcal{H}$, the empirical risk cannot increase. If this is true, then the empirical risk can only decrease. This means that $I_S[f_S]$ can only decrease as $N$ increases. So we might get a lower empirical risk. 
 
@@ -583,7 +506,9 @@ The second expression in brackets is greater than or equal to zero i.e. $I_s[f^*
 
 %%%
 \paragraph{Problem 5 (MATLAB)}
-Please write your analysis on Problem 5 here
+a) Code
+b)Code
+C) When we plotted the accuracy on the unlabeled data against n (the number of labeled data) we could see that as n got large, Laplacian and RLS had similar accuracy. However, for smaller values of n, Laplacian had a clear advantage because it was able to incorporate information about the geometric structure of the unlabeled data when. Therefore, when it came around to predict, it had an advantage, because it had information that regular RLS tikhonov had no way of obtaining.
 
 \end{document}
 
